@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="styles.css"/>
+<html>
+	<div class=form-box>
+		<h1 class="center"> The Story Keeper Bookstore </h1>
+		<form action="" method="post">
+			<div class="form-item">
+				<label for="first-name">Book Seller's First Name:</label>
+				<div style="float: right;">
+					<input type="text" id="first-name" name="first-name"> 
+					<p> Required </p>
+				</div>
+				<br> <br>
+			</div>
+			<div class="form-item">
+				<label for="last-name">Book Seller's Last Name:</label>
+				<div style="float: right;">
+					<input type="text" id="last-name" name="last-name">
+					<p> Required </p>
+				</div>
+			</div>
+			<br>
+			<div class="form-item">
+				<label for="password">Book seller's password:</label>
+				<div style="float: right;">
+					<input type="password" id="password" name="password">
+					<p> Required </p>
+				</div>
+			</div>
+			<br>
+			<div class="form-item">
+				<label for="id">Book seller's id:</label>
+				<div style="float: right;">
+					<input type="text" id="id" name="id">
+					<p> Required </p>
+				</div>
+			</div>
+			<br>
+			<div class="form-item">
+				<label for="phone-number">Book seller's phone #:</label>
+				<div style="float: right;">
+					<input type="phone-number" id="phone-number" name="phone-number">
+					<p> Required </p>
+				</div>
+			</div>
+			<br>
+			<div class="form-item">
+				<label for="email">Book seller's email:</label>
+				<div style="float: right;">
+					<span style="margin-right: 80px;"> <input type="email" id="email" name="email"> </span>
+				</div>
+			</div>
+			<br>
+			<div class="form-item">
+				<label for="confirm-email">Check the box to request an email confirmation</label>
+				<div style="float: right;">
+					<span style="margin-right: 80px;"> <input type="checkbox" name="confirm-email" id="confirm-email"> </span>
+				</div>
+			</div>
+			<br>
+			<label for="transaction-opts">Select a Transaction:</label><br>
+			<input type="radio" name="transaction-opts" value="book-seller-acc-search">Search a book seller's accounts</input><br>
+			<input type="radio" name="transaction-opts" value="book-purchase">Customer's book purchase</input><br>
+			<input type="radio" name="transaction-opts" value="book-return">Customer's book return</input><br>
+			<input type="radio" name="transaction-opts" value="order-update">Update a customer's book order</input><br>
+			<input type="radio" name="transaction-opts" value="order-cancel">Cancel a customer's book order</input><br>
+			<input type="radio" name="transaction-opts" value="book-search">Search for a book</input><br>
+			<input type="radio" name="transaction-opts" value="customer-acc-create">Create new customer account</input><br>
+			<br>
+			<div class="center">
+				<input type="reset" value="Reset">
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+	</div>
+</html>
+

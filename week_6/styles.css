@@ -1,0 +1,14 @@
+#out {
+	position: absolute;
+	font-family: Arial;
+	font-size: 20px;
+	color: blue;
+}
+
+#over {
+	position: absolute;
+	font-family: sans-serif;
+	font-size: 25px;
+	margin-left: 69px;
+	color: green;
+}

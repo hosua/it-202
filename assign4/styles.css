@@ -1,0 +1,153 @@
+/* Remove tailwind arrows on number inputs */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type=number]{
+	-moz-appearance: textfield;
+}
+
+
+/* background image */
+body, html {
+	background-image: url("library.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.title-box {
+	position: absolute;
+	left: 50%;
+	top: 25%;
+	transform: translate(-50%, 0%);
+	border: 5px solid #23718c;
+	padding: 10px;
+	color: white;
+	background-color: rgba(36,33,32,.9);
+}
+
+.form-box {
+	position: absolute;
+	left: 50%;
+	top: 25%;
+	transform: translate(-50%, 0%);
+	border: 5px solid #23718c;
+	padding: 10px;
+	color: white;
+	background-color: rgba(36,33,32,.9);
+}
+
+.form-box span {
+	display: inline-block;
+	/* border: 1px solid #23718c; */
+	margin-bottom: 15px;
+}
+
+.form-box h1 {
+	color: #23718c
+}
+
+.form-item p {
+	color: #038c1e;
+	display:inline;
+	text-align: right;
+	font-weight: bold;
+}
+
+.form-item label {
+	margin-right: 25px;
+}
+
+.center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.center > input {
+	display: flex;
+	float: right;
+	position: relative;
+	margin-right: 15px;
+}
+
+.error {
+	border-color: red;
+}
+
+.form-box table, td {
+	margin: auto;
+	border: 1px solid #23718c;
+	color: white;
+}
+
+.form-box th {
+	margin: auto;
+	border: 1px solid #23718c;
+	color: #71bfd9;
+}
+
+.topnav {
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+	border: 3px solid #23718c;
+	background-color: #1a252e;
+}
+
+.topnav a {
+	float: left;
+	color: #71bfd9;
+	border: 1px solid #23718c;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+	border: 1px solid #23718c;
+	background-color: #31C45D;
+	color: white;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active:hover {
+	border: 1px solid #23718c;
+	background-color: #0EE057;
+	color: white;
+}
+
+.topnav span {
+	display: inline-block;
+	border: 1px solid #23718c;
+	float: left;
+	color: #f2f2f2;
+	text-align: left;
+	padding: 5px 5px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.navtitle {
+	display: inline-block;
+	border: 1px solid #23718c;
+	color: #1196c2;
+	text-align: center;
+	padding: 2px 2px;
+	text-decoration: none;
+	font-size: 23px;
+}
+
+.buttonholder {
+	text-align: center;
+}

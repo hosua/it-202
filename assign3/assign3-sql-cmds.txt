@@ -1,0 +1,131 @@
+CREATE TABLE salesperson_table(
+    first_name VARCHAR(25) NOT NULL,
+    last_name VARCHAR(25) NOT NULL,
+    passwd VARCHAR(10) NOT NULL,
+  	id INT NOT NULL,  
+    phone_number VARCHAR(15) NOT NULL,
+    email VARCHAR(100),
+    PRIMARY KEY(id),
+    CHECK (id >= 10000000 AND id <= 99999999)
+);
+
+INSERT INTO salesperson_table VALUES
+	("John", "Doe", "A1@s", 10000000, "973-971-9731", "jd@foo.bar"),
+	("Randy", "Orton", "B2@s", 10000001, "973-123-1234", "ro@gmail.com"),
+	("Dr.", "House", "C3@s", 10000002, "973-722-1562", "dh@hospital.med"),
+	("Luka", "Doncic", "Mav77!", 10000003, "772-113-1543", "ld@mavericks.ball"),
+	("Super", "Mario", "Nes90!", 10000004, "123-432-1526", "sm@nintendo.com"),
+	("Jayda", "Bowers", "Jb72!", 10000005, "423-162-6273", "jb@yahoo.com"),
+	("Clementine", "Hodges", "Ch69!", 10000006, "627-423-1678", "ch@baz.net"),
+	("Lilith", "Ferreira", "Lf22!", 10000007, "167-126-7239", "lf@books.org"),
+	("Amit", "Christensen", "Ac123!", 10000008, "782-743-1235", "ac@books.org"),
+	("Sanjeev", "Mccall", "Sm52!", 10000009, "623-127-2370", "sm@read.book"),
+	("Euan", "Hill", "Eh123!", 10000010, "777-222-1234", "eh@koth.net")
+;
+
+
+CREATE TABLE customer_table( 
+	first_name VARCHAR(25) NOT NULL, 
+	last_name VARCHAR(25) NOT NULL, 
+	id INT NOT NULL AUTO_INCREMENT, 
+	PRIMARY KEY(id)
+);
+
+INSERT INTO customer_table (first_name, last_name)
+VALUES
+	("Phillippa", "Cobb"),
+	("Jodi", "Prosser"),
+	("Alfie", "Crouch"),
+	("Jac", "Mejia"),
+	("Adriana", "Gates"),
+	("Muhammed", "Day"),
+	("Macie", "Whitmore"),
+	("Mikhail", "Wong"),
+	("Finn", "Callaghan"),
+	("Mathew", "Rodrigues"),
+	("Jeffrey", "Blackmore")
+;
+
+
+CREATE TABLE customer_purchase_table(
+	item_desc VARCHAR(100),
+ 	purchase_date DATETIME NOT NULL,
+	order_type VARCHAR(15) NOT NULL
+    CHECK (LOWER(order_type) = "in store" OR LOWER(order_type) = "online"),
+    payment_type VARCHAR(15) NOT NULL
+    CHECK (LOWER(payment_type) = "cash" OR LOWER(payment_type) = "credit"),
+    customer_id INT NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY(id),
+	FOREIGN KEY(customer_id) REFERENCES customer_table(id)
+);
+
+INSERT INTO customer_purchase_table 
+(item_desc, purchase_date, order_type, payment_type, customer_id, id)
+VALUES
+	("Assassin Without Flaws","2021-01-08 14:12:56","in store", "credit", 1, 1),
+	("Pilot Of The Night","2022-05-20 22:27:29", "in store", "cash", 2, 2),
+	("Kings Of The Ancients","2020-06-24 04:43:53","online", "cash", 3, 3),
+	("Failure Of The Nation","2022-09-20 12:01:53","online", "credit", 4, 4),
+	("Failure Without A Conscience","2020-08-11 17:23:23","online", "cash", 5, 5),
+	("Driving Into The Apocalypse","2020-10-28 10:27:20", "in store", "cash", 6, 6),
+	("Remember My Home","2022-09-20 05:11:09","online", "credit", 7, 7),
+	("Lord Without Hate","2020-09-25 03:23:06","in store", "credit", 8, 8),
+	("Pilot Of The Eclipse", "2022-03-26 16:03:51", "online", "cash", 9, 9),
+	("Cats Of Darkness", "2022-04-03 08:10:59", "in store", "credit", 10, 10),
+	("Victory Without Faith", "2022-07-13 21:09:49", "Online", "credit", 5, 11),
+	("Loss Of Silver", "2022-05-07 04:48:08", "In Store", "cash", 7, 12),
+	("Controlling The King", "2022-02-15 17:44:52", "Online", "credit", 2, 13),
+	("Assassin Without Flaws", "2022-04-15 17:44:52", "Online", "credit", 4, 14),
+	("Kings Of The Ancients", "2022-04-15 12:44:52", "Online", "credit", 8, 15),
+	("Driving Into The Apocalypse", "2021-08-15 17:44:52", "Online", "credit", 5, 16),
+	("Driving Into The Apocalypse", "2021-02-15 12:44:52", "Online", "credit", 9, 17),
+	("Failure Of The Nation", "2021-02-15 20:34:30", "in store", "cash", 4, 18),
+	("Kings Of The Ancients", "2021-08-15 18:34:30", "in store", "cash", 6, 19),
+	("Kings Of The Ancients", "2021-10-15 18:22:52", "in store", "cash", 3, 20)
+;
+
+CREATE TABLE customer_order_table(
+    shipping_address VARCHAR(100),
+    salesperson_id INT NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
+    customer_id INT NOT NULL,
+    purchase_id INT NOT NULL,
+	PRIMARY KEY(id),
+	FOREIGN KEY(salesperson_id) REFERENCES salesperson_table(id),
+	FOREIGN KEY(customer_id) REFERENCES customer_table(id),
+	FOREIGN KEY(purchase_id) REFERENCES customer_purchase_table(id)
+);
+
+
+INSERT INTO customer_order_table (shipping_address, salesperson_id, customer_id, purchase_id) VALUES
+	('', 10000000, 1, 1),
+	('', 10000000, 2, 2),
+	('793 Fieldstone Lane Lakeville, MN 55044', 10000001, 3, 3),
+	('100 Armstrong Street Helotes, TX 78023', 10000002, 5, 5),
+	('', 10000002, 6, 6),
+	('890 N. Jackson Ave. Woodside, NY 11377', 10000003, 7, 7),
+	('', 10000003, 8, 8),
+	('32 Forest Dr. Sugar Land, TX 77478', 10000004, 9, 9),
+	('', 10000005, 10, 10),
+	('', 10000006, 6, 12),
+	('44 Pilgrim Road Lincolnton, NC 28092', 10000006, 2, 13),
+	('8243 Lakeview St. Waynesboro, PA 17268', 10000007, 8, 15),
+	('710 W. York Dr. Monroe, NY 10950', 10000008, 5, 16),
+	('107 Manor St. Los Angeles, CA 90008', 10000008, 9, 17),
+	('', 10000009, 6, 19),
+	('', 10000010, 3, 20);
+
+
+DROP TABLE customer_purchase_table;
+DROP TABLE customer_order_table;
+DROP TABLE salesperson_table; 
+DROP TABLE customer_table;
+
+// Join example 
+
+SELECT customer_purchase_table.purchase_id, customer_table.first_name, customer_table.last_name, customer_table.customer_id, 
+customer_purchase_table.item_desc, customer_purchase_table.purchase_date, customer_purchase_table.payment_type, customer_purchase_table.order_type, customer_order_table.shipping_address
+FROM customer_table 
+INNER JOIN customer_order_table ON customer_table.customer_id = customer_order_table.customer_id 
+INNER JOIN customer_purchase_table ON customer_order_table.purchase_id = customer_purchase_table.purchase_id;

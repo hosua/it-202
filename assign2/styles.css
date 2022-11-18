@@ -1,0 +1,48 @@
+/* background image */
+body, html {
+	background-image: url("library.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+.form-box {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: 5px solid #23718c;
+	padding: 10px;
+	color: white;
+	background-color: rgba(36,33,32,.9);
+}
+
+.form-box h1 {
+	color: #23718c
+}
+
+.form-item p {
+	color: #038c1e;
+	display:inline;
+	text-align: right;
+	font-weight: bold;
+}
+
+
+.form-item label {
+	margin-right: 25px;
+}
+
+.center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.center > input {
+	margin-right: 15px;
+}
+
+.error {
+	border-color: red;
+}

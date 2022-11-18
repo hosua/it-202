@@ -1,0 +1,84 @@
+/* background image */
+body, html {
+	background-image: url("library.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.title-box {
+	position: absolute;
+	left: 50%;
+	top: 10%;
+	transform: translate(-50%, -50%);
+	border: 5px solid #23718c;
+	padding: 10px;
+	color: white;
+	background-color: rgba(36,33,32,.9);
+}
+
+.title-box h1 {
+	color: #23718c
+}
+
+.form-box {
+	position: absolute;
+	left: 50%;
+	top: 15%;
+	transform: translate(-50%, 25%);
+	border: 5px solid #23718c;
+	padding: 10px;
+	color: white;
+	background-color: rgba(36,33,32,.9);
+}
+
+.form-box input {
+	padding: 20px;
+	margin: 20px;
+}
+
+.table-box {
+	position: relative;
+	left: 50%;
+	top: 5%;
+	transform: translate(-50%, 25%);
+	border: 5px solid #23718c;
+	padding: 10px;
+	color: white;
+	background-color: rgba(36,33,32,.9);
+}
+
+.table-box input {
+	display: flex;
+	padding: 10px;
+	margin: auto;
+	justify-content: center;
+}
+
+.table-box table {
+	margin: auto;
+}
+
+.table-box th, td {
+  border: 1px solid #23718c;
+  color: white;
+}
+
+.title-box h1 {
+	color: #23718c
+}
+
+.table-box h1 {
+	color: #23718c
+}
+
+.form-item p {
+	color: #038c1e;
+	display:inline;
+	text-align: right;
+	font-weight: bold;
+}
+
+
+.form-item label {
+	margin-right: 25px;
+}
