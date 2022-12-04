@@ -1,0 +1,9 @@
+.warning {
+    border: 2px solid black;
+    background-color: red;
+    position: relative; 
+    width: 100%;
+}
+
+.warning-container {
+}

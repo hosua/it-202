@@ -1,0 +1,28 @@
+.warning {
+    border: 2px solid black;
+    background-color: red;
+    position: relative; 
+    width: 100%;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+#active-users {
+    resize: none;
+}
+
+#messenger {
+    resize: none;
+}
+
+#listener {
+    position: relative;
+    width: 100%;
+    resize: none;
+}
+
+
